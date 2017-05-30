@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Constraint propagation reduces the search space by eliminating path's that could not exist. The naked twins heuristic eliminate the number on of possible path's for the other cells in a specific box, because these numbers are already reserved. So we search in every box for a value that contains two numbers. These numbers will removed from all other boxes.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: A diagonal constraint could be added by adding the peers the the peer table. The peers of A1 are also D4,E5,G6,E7,H9. So the implementation adds all peers that are not exists for now and remove the doubled keys and the own key.
 
 ### Install
 
