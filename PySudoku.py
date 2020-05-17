@@ -1,7 +1,11 @@
-import sys, os, random, pygame
-sys.path.append(os.path.join("objects"))
-import SudokuSquare
-from GameResources import *
+import os
+import pygame
+import sys
+
+sys.path.append(os.path.join('objects'))
+
+import objects.SudokuSquare
+from objects.GameResources import *
 
 digits = '123456789'
 rows = 'ABCDEFGHI'
@@ -9,7 +13,6 @@ rows = 'ABCDEFGHI'
 
 def play(values_list):
     pygame.init()
-
 
     size = width, height = 700, 700
     screen = pygame.display.set_mode(size)
@@ -44,7 +47,7 @@ def play(values_list):
                     number = None
                 else:
                     number = int(string_number)
-                theSquares.append(SudokuSquare.SudokuSquare(number, startX, startY, editable, x, y))
+                theSquares.append(objects.SudokuSquare.SudokuSquare(number, startX, startY, editable, x, y))
 
         screen.blit(background_image, (0, 0))
         for num in theSquares:
@@ -60,6 +63,7 @@ def play(values_list):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+
 
 if __name__ == "__main__":
     main()
